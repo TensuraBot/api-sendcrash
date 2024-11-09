@@ -1,5 +1,5 @@
 //api by Aorta
-const sendLockUi = require('../services/sendcrashService');
+const sendcrash = require('../sendcrashService');
 
 module.exports = async (req, res) => {
     if (req.method !== 'POST') {
@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
 
     try {
         console.log(`Request received at /sendcrash endpoint with target: ${target}`);
-        await sendLockUi(target, ptcp);
+        await sendcrash(target, ptcp);
         res.status(200).json({ message: 'Message sent successfully' });
     } catch (error) {
         res.status(500).json({ error: 'Failed to send message', details: error.message });
