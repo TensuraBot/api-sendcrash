@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/sendcrash.js",
+      "src": "../sendcrash.js",
       "use": "@vercel/node"
     }
   ],
