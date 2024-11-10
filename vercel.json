@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "./sendcrash.js",
+      "src": "api/sendcrash.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/sendcrash",
-      "dest": "api/sendcrash.js"
+      "dest": "/api/sendcrash.js"
     }
   ]
 }
